@@ -93,7 +93,7 @@
       </li>
 
        <li class="nav-item ">
-        <a class="nav-link" href="review.html"><i class="fas fa-comments"></i></i><strong> REVIEW </strong></a>
+        <a class="nav-link" href="review.html"><i class="fas fa-globe"></i><strong> REVIEW </strong></a>
       </li>
       
     </ul>
@@ -105,20 +105,7 @@
 
 <!-- Navbar Ends -->
     
-<?php
-  
-  include 'php/dbh.inc.php';
-  ?>
-<!-- <div class="container-fluid" style="background-image:url('back.jpg');height:400px;"> -->
-
-
-<!--  <form action="php/book_ride.php" method="post"> -->
-    <?php
-    
-      if($bookingid==5400 || $bookingid==null){
-        ?>
-
-           <div  id="booking" class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Book Your Ride <img src="logo3.png" class="rounded float-right fadeInDown animated" style="width: 100px; height: 100px;"></h1><br>
    
@@ -128,110 +115,55 @@
   
   <div class="card-body">
    
-   <form action="php/book_ride.php" method="post">
+   <form>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Enter Pickup</label>
-      <input type="text" class="form-control" id="pickup" placeholder="Pickup" required name="pickup">
+      <input type="text" class="form-control" id="pickup" placeholder="Pickup">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Enter Destination</label>
-      <input type="text" class="form-control" id="Destination" placeholder="Destination" required name="destination">
+      <input type="password" class="form-control" id="Destination" placeholder="Destination">
     </div>
   </div>
  
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity" required name="city">
+      <input type="text" class="form-control" id="inputCity">
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">State</label>
-      <select id="inputState" class="form-control" name="state">
+      <select id="inputState" class="form-control">
         <option selected>Choose...</option>
         <option>...</option>
       </select>
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Pin</label>
-      <input type="text" class="form-control" required name="zip" id="inputZip">
+      <input type="text" class="form-control" id="inputZip">
     </div>
+  </div>
  
-  <!-- <p>Choose Your Ride : </p> -->
-  <div class="form-group col-md-4">
-      <label for="inputState">Choose Your Ride : </label>
-      <select id="inputState" class="form-control" name="type">
-        <!-- <option >Choose...</option> -->
-        <option selected>Radio Texi</option>
-        <option>Sedan</option>
-        <option>Hachback</option>
-        <option>SUV</option>
-        <option>Outstation</option>
-      </select>
-    </div>
-     </div>
-    <input type="submit" name="submit" value="submit" class="btn-outline btn-outline-danger"/>
+ 
 </form>
             
+ <p>Choose Your Ride : </p>
 
+ <div class="container">
+  <div class="row">
+    <div class="col-md-2"><a href=""><img src="cab1.jpg"  class="rounded float-left"></a></div>
+     <div class="col-md-2"> <a href=""><img src="cab2.jpg"  class="rounded float-left"></a></div>
+    <div class="col-md-2"> <a href=""><img src="cab3.jpg"  class="rounded float-left"></a></div>
+    <div class="col-md-2">  <a href=""><img src="cab4.jpg"  class="rounded float-left"></a></div>
+    <div class="col-md-2"> <a href=""><img src="cab5.jpg"  class="rounded "></a></div>
+  </div> 
+ </div>
 
- <!-- <div class="rides">
-  <a href=""><img src="cab1.jpg"  class="rounded float-left"></a>
-  <a href=""><img src="cab2.jpg"  class="rounded float-left"></a>
-  <a href=""><img src="cab3.jpg"  class="rounded float-left"></a>
-  <a href=""><img src="cab4.jpg"  class="rounded "></a>
-   
- </div> -->
-
- <!-- <a href="php/book_ride.php"><button type="but ton" class="btn btn-primary" style="margin-top: 50px;">Book Ride</button></a> -->
+ <button type="button" class="btn btn-primary" style="margin-top: 50px;">Book Ride</button>
 
  </div>
 </div>
-
-
-  </div>
-</div>
-        <?php
-        include 'php/book_ride_map.php';
-}
-else if($pdone==0){
-  // echo "khalid";
-  ?>
-    <div class="container " style="margin-bottom:30px;">
-      <div class="row ">
-        <div class="col-md-8 bg-secondary">
-          <!-- <div class="label"> -->
-            <h4>your payment of <span class="badge badge-warning"><?php echo $fare1;  ?> INR </span>is pending</h4>
-          <!-- </div> -->
-        </div>
-        <a class="col-md-4 border btn bg-success" href="payment.php" style="text-dacoration:none;color:red;">
-          <!-- <div class="label"> -->
-          
-         <span style="margin-top:7px;">Make payment Now!</span> 
-            
-          <!-- </div> -->
-        </a>
-      </div>
-    </div>
-
-
-  <?php
-
-}else{
-
-  // header("location customer_final.php");
-  ?>
-    <script type="text/javascript">
-
-      window.open("customer_final.php","_self");
-    </script>
-
-  <?php
-
-}
-
-
-?>
 
 <!-- Fare Estimater -->
 
@@ -248,11 +180,11 @@ else if($pdone==0){
    <div class="form-row">
     <div class="form-group col-md-12">
       <label ><i class="fas fa-circle" style="color: green;"></i>  Enter Pickup</label>
-      <input type="text" class="form-control" id="txtSource" placeholder="Pickup">
+      <input type="text" class="form-control" id="origin-input" placeholder="Pickup">
     </div>
     <div class="form-group col-md-12">
       <label ><i class="fas fa-circle" style="color: red;"></i>  Enter Destination</label>
-      <input type="text" class="form-control" id="txtDestination" placeholder="Destination">
+      <input type="text" class="form-control" id="destination-input" placeholder="Destination">
     </div>
 
     <div id="mode-selector" class="controls">
@@ -286,12 +218,9 @@ else if($pdone==0){
   <input class="form-check-input" type="radio" name="exampleRadios" >
   <label class="form-check-label" for="exampleRadios3"> SUV</label>
 </div>
-
   <hr>
 
-  <button type="button" class="btn btn-primary btn-lg btn-block" style="border-radius: 0;" id="calculate" onclick="GetRoute()">Calculate</button>
-
- 
+  <button type="button" class="btn btn-primary btn-lg btn-block" style="border-radius: 0;">Calculate</button>
  
  
      </form>
@@ -303,7 +232,7 @@ else if($pdone==0){
      <div class="card" style="margin-top: 30px;">
       <div class="card-body" style="margin: 0;">
          
-        <div id="dvMap" style="width: 480px; height: 550px;"> </div>
+        <div id="map" style="width: 480px; height: 550px;"> </div>
  
          
       </div>
@@ -315,20 +244,8 @@ else if($pdone==0){
 
  <!-- Fare Estimater Ends Here -->
 
- <div class="card" style="margin-top: 30px;">
-      <div class="card-body" style="margin: 0;">
-         
- <div class="alert alert-success" role="alert" id="dvDistance" style=" margin-top: 10px; font-weight: bold; display: block; font-size: 20px;">Distance: <br>Duration: </div>
-         
-      </div>
-    </div>
-
-
   </div>
 </div>
-
-
-
 
 
 
@@ -391,17 +308,14 @@ else if($pdone==0){
 
     <!-- MAPS-->
 
-  
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1R5QWrqEMfU9qPpah3ufkQmeSWBEVtRo&libraries=places&callback=initMap"
-        async defer></script>-->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
-<script type="text/javascript">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1R5QWrqEMfU9qPpah3ufkQmeSWBEVtRo&libraries=places&callback=initMap"
+        async defer></script>
 
 
-
- function initMap() {
-        var map = new google.maps.Map(document.getElementById('dvMap'), {
+    <script type="text/javascript">
+      
+       function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
           mapTypeControl: false,
           center: {lat: 28.5621, lng: 77.2841},
           zoom: 13
@@ -410,79 +324,91 @@ else if($pdone==0){
         new AutocompleteDirectionsHandler(map);
       }
 
+      function AutocompleteDirectionsHandler(map) {
+        this.map = map;
+        this.originPlaceId = null;
+        this.destinationPlaceId = null;
+        this.travelMode = 'TRANSIT';
+        var originInput = document.getElementById('origin-input');
+        var destinationInput = document.getElementById('destination-input');
+        var modeSelector = document.getElementById('mode-selector');
+        this.directionsService = new google.maps.DirectionsService;
+        this.directionsDisplay = new google.maps.DirectionsRenderer;
+        this.directionsDisplay.setMap(map);
 
-var source, destination;
-var directionsDisplay;
-var directionsService = new google.maps.DirectionsService();
-google.maps.event.addDomListener(window, 'load', function () {
-    new google.maps.places.SearchBox(document.getElementById('txtSource'));
-    new google.maps.places.SearchBox(document.getElementById('txtDestination'));
-    directionsDisplay = new google.maps.DirectionsRenderer({ 'draggable': true });
-});
- 
-function GetRoute() {
-    var mumbai = new google.maps.LatLng(18.9750, 72.8258);
-    var mapOptions = {
-        zoom: 7,
-        center: mumbai
-    };
-    map = new google.maps.Map(document.getElementById('dvMap'), mapOptions);
-    directionsDisplay.setMap(map);
-    directionsDisplay.setPanel(document.getElementById('dvPanel'));
- 
-    //*********DIRECTIONS AND ROUTE**********************//
-    source = document.getElementById("txtSource").value;
-    destination = document.getElementById("txtDestination").value;
- 
-    var request = {
-        origin: source,
-        destination: destination,
-        travelMode: google.maps.TravelMode.DRIVING
-    };
-    directionsService.route(request, function (response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
+        var originAutocomplete = new google.maps.places.Autocomplete(
+            originInput, {placeIdOnly: true});
+        var destinationAutocomplete = new google.maps.places.Autocomplete(
+            destinationInput, {placeIdOnly: true});
+
+        this.setupClickListener('changemode-walking', 'WALKING');
+        this.setupClickListener('changemode-transit', 'TRANSIT');
+        this.setupClickListener('changemode-driving', 'DRIVING');
+
+        this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+        this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+
+     /* this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);*/
+      }
+
+      // Sets a listener on a radio button to change the filter type on Places
+      // Autocomplete.
+      AutocompleteDirectionsHandler.prototype.setupClickListener = function(id, mode) {
+        var radioButton = document.getElementById(id);
+        var me = this;
+        radioButton.addEventListener('click', function() {
+          me.travelMode = mode;
+          me.route();
+        });
+      };
+
+      AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(autocomplete, mode) {
+        var me = this;
+        autocomplete.bindTo('bounds', this.map);
+        autocomplete.addListener('place_changed', function() {
+          var place = autocomplete.getPlace();
+          if (!place.place_id) {
+            window.alert("Please select an option from the dropdown list.");
+            return;
+          }
+
+          if (mode === 'ORIG') {
+            me.originPlaceId = place.place_id;
+          } else {
+            me.destinationPlaceId = place.place_id;
+          }
+          me.route();
+        });
+
+      };
+
+      AutocompleteDirectionsHandler.prototype.route = function() {
+        if (!this.originPlaceId || !this.destinationPlaceId) {
+          return;
         }
-    });
- 
-    //*********DISTANCE AND DURATION**********************//
-    var service = new google.maps.DistanceMatrixService();
-    service.getDistanceMatrix({
-        origins: [source],
-        destinations: [destination],
-        travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.METRIC,
-        avoidHighways: false,
-        avoidTolls: false
-    }, function (response, status) {
-        if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
-            var distance = response.rows[0].elements[0].distance.value;
-            var duration = response.rows[0].elements[0].duration.value;
-            var dvDistance = document.getElementById("dvDistance");
-             var dis = distance/1000 ;
-             var time = duration/60;
+        var me = this;
 
-           
+        this.directionsService.route({
+          origin: {'placeId': this.originPlaceId},
+          destination: {'placeId': this.destinationPlaceId},
+          travelMode: this.travelMode
+        }, function(response, status) {
+          if (status === 'OK') {
+            me.directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      };
 
-           dvDistance.innerHTML = "";
-            dvDistance.innerHTML += "Distance: " + dis + " Km" +"<br />";
-            dvDistance.innerHTML += "Duration:" + time + " min" + "<br />";
 
-           
-            var fare = dis * 6 ;
-            
 
-            dvDistance.innerHTML+= "Fare:  Rs " + fare + "/-" ;
+    </script>
 
-            
-            
- 
-        } else {
-            alert("Unable to find the distance via road.");
-        }
-    });
-}
-</script>
+   
+
     
     
 

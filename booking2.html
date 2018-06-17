@@ -51,6 +51,26 @@
       width: 100%;
      }
 
+     #taxi{
+     margin-left: 230px;
+     }
+
+     #sedan{
+      margin-left: 250px;
+     }
+
+
+     #hatch{
+      margin-left: 220px;
+     }
+
+
+     #suv{
+      margin-left: 250px;
+     }
+
+
+
      
 
 
@@ -105,20 +125,7 @@
 
 <!-- Navbar Ends -->
     
-<?php
-  
-  include 'php/dbh.inc.php';
-  ?>
-<!-- <div class="container-fluid" style="background-image:url('back.jpg');height:400px;"> -->
-
-
-<!--  <form action="php/book_ride.php" method="post"> -->
-    <?php
-    
-      if($bookingid==5400 || $bookingid==null){
-        ?>
-
-           <div  id="booking" class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Book Your Ride <img src="logo3.png" class="rounded float-right fadeInDown animated" style="width: 100px; height: 100px;"></h1><br>
    
@@ -128,110 +135,66 @@
   
   <div class="card-body">
    
-   <form action="php/book_ride.php" method="post">
+   <form>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Enter Pickup</label>
-      <input type="text" class="form-control" id="pickup" placeholder="Pickup" required name="pickup">
+      <input type="text" class="form-control" id="pickup" placeholder="Pickup">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Enter Destination</label>
-      <input type="text" class="form-control" id="Destination" placeholder="Destination" required name="destination">
+      <input type="password" class="form-control" id="Destination" placeholder="Destination">
     </div>
   </div>
  
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity" required name="city">
+      <input type="text" class="form-control" id="inputCity">
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">State</label>
-      <select id="inputState" class="form-control" name="state">
+      <select id="inputState" class="form-control">
         <option selected>Choose...</option>
-        <option>...</option>
+        <option>Andhra Pradesh</option>
+        <option>Arunachal Pradesh</option>
+        <option>Assam</option>
+        <option>Bihar</option>
+        <option>Chhattisgarh</option>
+        <option>Goa</option>
+        <option>Gujarat</option>
+        <option>Haryana</option>
+        <option>Himachal Pradesh</option>
+        <option>Jammu & Kashmir</option>
+       
+        <option></option>
       </select>
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Pin</label>
-      <input type="text" class="form-control" required name="zip" id="inputZip">
+      <input type="text" class="form-control" id="inputZip">
     </div>
+  </div>
  
-  <!-- <p>Choose Your Ride : </p> -->
-  <div class="form-group col-md-4">
-      <label for="inputState">Choose Your Ride : </label>
-      <select id="inputState" class="form-control" name="type">
-        <!-- <option >Choose...</option> -->
-        <option selected>Radio Texi</option>
-        <option>Sedan</option>
-        <option>Hachback</option>
-        <option>SUV</option>
-        <option>Outstation</option>
-      </select>
-    </div>
-     </div>
-    <input type="submit" name="submit" value="submit" class="btn-outline btn-outline-danger"/>
+ 
 </form>
             
+ <p>Choose Your Ride : </p>
 
+ <div class="container">
+  <div class="row">
+    <div class="col-md-2"><a href=""><img src="cab1.jpg"  class="rounded float-left"></a></div>
+     <div class="col-md-2"> <a href=""><img src="cab2.jpg"  class="rounded float-left"></a></div>
+    <div class="col-md-2"> <a href=""><img src="cab3.jpg"  class="rounded float-left"></a></div>
+    <div class="col-md-2">  <a href=""><img src="cab4.jpg"  class="rounded float-left"></a></div>
+    <div class="col-md-2"> <a href=""><img src="cab5.jpg"  class="rounded "></a></div>
+  </div> 
+ </div>
 
- <!-- <div class="rides">
-  <a href=""><img src="cab1.jpg"  class="rounded float-left"></a>
-  <a href=""><img src="cab2.jpg"  class="rounded float-left"></a>
-  <a href=""><img src="cab3.jpg"  class="rounded float-left"></a>
-  <a href=""><img src="cab4.jpg"  class="rounded "></a>
-   
- </div> -->
-
- <!-- <a href="php/book_ride.php"><button type="but ton" class="btn btn-primary" style="margin-top: 50px;">Book Ride</button></a> -->
+ <button type="button" class="btn btn-primary" style="margin-top: 50px;">Book Ride</button>
 
  </div>
 </div>
-
-
-  </div>
-</div>
-        <?php
-        include 'php/book_ride_map.php';
-}
-else if($pdone==0){
-  // echo "khalid";
-  ?>
-    <div class="container " style="margin-bottom:30px;">
-      <div class="row ">
-        <div class="col-md-8 bg-secondary">
-          <!-- <div class="label"> -->
-            <h4>your payment of <span class="badge badge-warning"><?php echo $fare1;  ?> INR </span>is pending</h4>
-          <!-- </div> -->
-        </div>
-        <a class="col-md-4 border btn bg-success" href="payment.php" style="text-dacoration:none;color:red;">
-          <!-- <div class="label"> -->
-          
-         <span style="margin-top:7px;">Make payment Now!</span> 
-            
-          <!-- </div> -->
-        </a>
-      </div>
-    </div>
-
-
-  <?php
-
-}else{
-
-  // header("location customer_final.php");
-  ?>
-    <script type="text/javascript">
-
-      window.open("customer_final.php","_self");
-    </script>
-
-  <?php
-
-}
-
-
-?>
 
 <!-- Fare Estimater -->
 
@@ -268,23 +231,23 @@ else if($pdone==0){
   </div>
  
   <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" checked>
-  <label class="form-check-label" for="exampleRadios1"> Radio Cab</label>
+  <input class="form-check-input" type="radio" name="exampleRadios"  checked>
+  <label class="form-check-label" for="exampleRadios1" > Radio Cab <span id="taxi"></span></label>
 </div>
 <hr>
 <div class="form-check">
   <input class="form-check-input" type="radio" name="exampleRadios" >
-  <label class="form-check-label" for="exampleRadios2"> Sedan</label>
+  <label class="form-check-label" for="exampleRadios2" > Sedan <span id="sedan" ></span></label>
+</div>
+<hr>
+<div class="form-check ">
+  <input class="form-check-input" type="radio" name="exampleRadios"  >
+  <label class="form-check-label" for="exampleRadios3" > Hatchback <span id="hatch"></span></label>
 </div>
 <hr>
 <div class="form-check ">
   <input class="form-check-input" type="radio" name="exampleRadios" >
-  <label class="form-check-label" for="exampleRadios3"> Hatchback</label>
-</div>
-<hr>
-<div class="form-check ">
-  <input class="form-check-input" type="radio" name="exampleRadios" >
-  <label class="form-check-label" for="exampleRadios3"> SUV</label>
+  <label class="form-check-label" for="exampleRadios3" > SUV <span id="suv"></span></label>
 </div>
 
   <hr>
@@ -466,13 +429,41 @@ function GetRoute() {
 
            dvDistance.innerHTML = "";
             dvDistance.innerHTML += "Distance: " + dis + " Km" +"<br />";
-            dvDistance.innerHTML += "Duration:" + time + " min" + "<br />";
+            dvDistance.innerHTML += "Duration:  " + time + "  min" + "<br />";
 
            
-            var fare = dis * 6 ;
-            
+            var fare1 ;
+            var fare2 ;
+            var fare3 ;
+            var fare4 ;
 
-            dvDistance.innerHTML+= "Fare:  Rs " + fare + "/-" ;
+            
+              fare1 = dis * 6 ;
+              fare1 = Math.round(fare1);
+
+            
+              fare2 = dis * 8 ;
+              fare2 = Math.round(fare2);
+
+            
+              fare3 = dis * 10 ;
+              fare3 = Math.round(fare3);
+           
+              fare4 = dis * 12 ;
+              fare4 = Math.round(fare4);
+
+             
+             document.getElementById("taxi").innerHTML =  document.getElementById("taxi").innerHTML + '<b>' + 'Rs'+ fare1 + '/-'+ "</b>" ;
+
+             document.getElementById("sedan").innerHTML =  document.getElementById("sedan").innerHTML +'<b>Rs ' + fare2 + " /-</b>" ;
+
+             document.getElementById("hatch").innerHTML =  document.getElementById("hatch").innerHTML + '<b>Rs ' + fare3 + " /-</b>";
+     
+            document.getElementById("suv").innerHTML =  document.getElementById("suv").innerHTML + '<b>Rs ' + fare4 + " /-</b>";
+
+             
+             
+           
 
             
             

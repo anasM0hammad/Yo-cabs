@@ -108,7 +108,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <!-- Image and text -->
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="landing.html" >
+  <a class="navbar-brand" href="landing.php" >
     <img src="logo3.png" width="30" height="30" class="d-inline-block align-top" ><strong> YO CABS</strong></a>
 </nav>
   
@@ -124,7 +124,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="profile.php "><i class="fas fa-user"></i><strong> PROFILE</strong></a>
+        <a class="nav-link" href="profile.php"><i class="fas fa-user"></i><strong> PROFILE</strong></a>
       </li>
 
        <li class="nav-item">
@@ -140,8 +140,8 @@
       </li>
       
     </ul>
-    <p class="nav_p"><img src="logo3.png" width="35" height="35" class="d-inline-block align-top" ><strong style=" font-family: lato;">  Hello..  </strong><span>Customer Name</span>
-     <button type="button" class="btn btn-danger mybtn">Log Out</button></p>
+    <p class="nav_p" style="font-style:san-serif"> <a href="<?php echo $_SESSION['img'];?>" target="_blank"><img src="<?php echo $_SESSION['img'];?>" style="height:75px;width:75px;" class="rounded-circle"/></a><strong style=" font-family: lato;">  Hello..  </strong><span style="font-family:san-serif"><?php echo $_SESSION['name'];?></span>
+     <a href="logout.php"><button type="button" class="btn btn-danger mybtn">Log Out</button></a></p>
   
    
 

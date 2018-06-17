@@ -1,14 +1,11 @@
  
       <?php
-session_start();
-
-if (isset($_POST['submit']) && $_POST['email']!="admin@gmail.com" && $_POST['password']!="admin") {
+if (isset($_POST['submit'])) {
       $email= $_POST['email'];
       
       $pas=$_POST['password'];
      
 
-$_SESSION['username']=$email;
      
 $servername = "localhost";
 $username = "root";
@@ -43,11 +40,14 @@ if (mysqli_num_rows($result) > 0)
                               session_start();
                               $_SESSION["flag"]=1;
                               $_SESSION["username"]=$row["email"];
+                              $_SESSION["userid"]=$row["userid"];
+                              $_SESSION['name']=$row['name'];
+                              $_SESSION['img']=$row['image'];
                               
                               ?>
                               <script type="text/javascript">
                            
-                            window.open('profile.php','_self');
+                            window.open('home1.php','_self');
                           </script>
                           <?php
                           }
@@ -64,11 +64,13 @@ else {
                           session_start();
                           $_SESSION["flag"]=2;
                           $_SESSION["username"]=$row["email"];
+                           $_SESSION['name']=$row['name'];
+                              $_SESSION['img']=$row['image'];
                           
                           ?>
                           <script type="text/javascript">
                        
-                        window.open('profile.php','_self');
+                        window.open('home1.php','_self');
                       </script>
                       <?php
                       }
@@ -87,21 +89,4 @@ else {
 
      mysqli_close($conn);
     }
-
-else{
- $_SESSION['username']=$email;
-
- ?>
-
-<script type="text/javascript">
-  
-  window.open("admintest.php",'_self');
-
-</script>
-
-
- <?
-<?php
-}
-
           ?>

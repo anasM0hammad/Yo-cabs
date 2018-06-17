@@ -24,12 +24,12 @@
 
  
 
-    <title>Yo Cabs-customer</title>
+    <title>Yo Cabs-driver</title>
 
     <style type="text/css">
       
       .head{
-        height: 500px;
+        height: 550px;
         background-image: url("img1.jpg");
         background-size: cover;
         box-sizing: border-box;
@@ -47,7 +47,7 @@
         color: white;
       }
 
-      .head p{
+      .head_p{
         font-size: 28px;
         padding-left: 13px;
         color: white;
@@ -55,7 +55,7 @@
       }
 
       .location{
-        margin-right: 30px;
+        margin-left: 450px;
         margin-top: 30px;
         display: inline-block;
 
@@ -96,6 +96,13 @@
 
      }
 
+     .detail{
+      font-weight: bold;
+      border-radius: 0;
+     }
+
+
+
      
 
      
@@ -108,7 +115,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <!-- Image and text -->
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="landing.html" >
+  <a class="navbar-brand" href="landing.php" >
     <img src="logo3.png" width="30" height="30" class="d-inline-block align-top" ><strong> YO CABS</strong></a>
 </nav>
   
@@ -124,79 +131,88 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="profile.php "><i class="fas fa-user"></i><strong> PROFILE</strong></a>
+        <a class="nav-link" href="profile.php"><i class="fas fa-user"></i><strong> PROFILE</strong></a>
       </li>
-
-       <li class="nav-item">
-        <a class="nav-link" href="booking.php"><i class="fas fa-car"></i><strong> BOOK CAB</strong></a>
-      </li>
-
        <li class="nav-item">
         <a class="nav-link" href="aboutUs.php"><i class="fas fa-globe"></i><strong> ABOUT</strong></a>
       </li>
 
-       <li class="nav-item ">
+       <!-- <li class="nav-item ">
         <a class="nav-link" href="review.php"><i class="fas fa-comments"></i><strong> REVIEW </strong></a>
-      </li>
+      </li> -->
       
     </ul>
-    <p class="nav_p"><img src="logo3.png" width="35" height="35" class="d-inline-block align-top" ><strong style=" font-family: lato;">  Hello..  </strong><span>Customer Name</span>
-     <button type="button" class="btn btn-danger mybtn">Log Out</button></p>
+    <p class="nav_p"> <a href="<?php echo $_SESSION['img'];?>" target="_blank"><img src="<?php echo $_SESSION['img'];?>" style="height:75px;width:75px;" class="rounded-circle"/></a><strong style=" font-family: lato;">  Hello..  </strong><span><?php echo $_SESSION['name'];?></span>
+     <a href="logout.php"><button type="button" class="btn btn-danger mybtn">Log Out</button></a></p>
   
    
 
   </div>
 </nav>
 
+<?php
 
+ include 'dbhd.inc.php';
+
+?>
 
  <div class="head">
    
-   <h1 class="fadeInUp animated">Reliable. Safe. Transparent.</h1>
-   
- 
+   <h1 class="fadeInUp animated d-md-none d-lg-block d-sm-none d-none">Reliable. Safe. Transparent.</h1>
+   <p class="fadeInUp head_p animated d-md-none d-lg-block d-sm-none d-none">Your Trusted Ride for Every Occasion</p>
+   <?php
+   if($book==null){
 
-<p class="fadeInUp animated">Your Trusted Ride for Every Occasion</p>
+?>
+    <figure class="figure location fadeIn animated  ">
+
+   <div class="card " style="width: 25rem;">
+    <div class="card-header">
+      <h5>No Job</h5>
+    </div>
+      <div class="card-body">
+  
+    <div>We are serching Job for You</div>
+
+ 
+  
+   
+  </div>
+</div>
+</figure>
+<?php
+ }else{
+
+?>
+  <figure class="figure location fadeIn animated  ">
+
+   <div class="card " style="width: 25rem;">
+    <div class="card-header">
+      <h5> Your Current Customer </h5>
+    </div>
+      <div class="card-body">
+  
+    <p ><img class="rounded-circle" src="<?php echo $client_image;?>" style="height:75px;width:75px;" class="d-inline-block align-top" ><strong style="color: black; font-size: 22px;"> <?php echo $client_name;?></strong></p>
+    
+    <div class="detail">
+    <p style ="color: black;font-size:15px;">Time And Date: <?php echo $trip_time?></p>
+    <p style ="color: black;font-size:15px;">Contact Number:  <?php echo $client_contact_number;?> </p>
+    <a href="driver_final.php"><button type="button" class="btn btn-primary btn-lg btn-block">Start Ride</button></a>
+  </div>
+
+ 
+  
+   
+  </div>
+</div>
+</figure>
+<?php
+}
+
+?>
 
  </div>
 
-
-
-<!-- <img class=" fadeInRight animated img-fluid" src="logo.JPG">
-
- <img class=" fadeInLeft animated img-fluid logo" src="cars.JPG" > -->
-
- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="img4.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img5.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img6.jpg" alt="Third slide">
-    </div>
-     <div class="carousel-item">
-      <img class="d-block w-100" src="img7.jpg" alt="Third slide">
-    </div>
-     <div class="carousel-item">
-      <img class="d-block w-100" src="img8.jpg" alt="Third slide">
-    </div>
-  </div>
-  <!--<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span> </a> -->
-</div>
-
-
-
-
- 
 
 
 <!-- Footer starts-->
@@ -247,6 +263,7 @@
 
 </div>
 
+ 
 
 <!--Footer Ends-->
 

@@ -138,9 +138,9 @@
         <a class="nav-link" href="aboutUs.html"><i class="fas fa-globe"></i><strong> ABOUT</strong></a>
       </li>
 
-       <li class="nav-item ">
+       <!-- <li class="nav-item ">
         <a class="nav-link" href="review.html"><i class="fas fa-comments"></i><strong> REVIEW </strong></a>
-      </li>
+      </li> -->
       
     </ul>
     <p class="nav_p"><img src="logo3.png" width="35" height="35" class="d-inline-block align-top" ><strong style=" font-family: lato;">  Hello..  </strong><span>Driver Name</span>
@@ -166,14 +166,12 @@
     </div>
       <div class="card-body">
   
-    <p ><img src="logo3.png" width="55" height="55" class="d-inline-block align-top" ><strong style="color: black; font-size: 20px;"> Customer Name</strong></p>
+    <p ><img src="logo3.png" width="55" height="55" class="d-inline-block align-top" ><strong style="color: black; font-size: 22px;">  Customer Name</strong></p>
     
     <div class="detail">
     <p>Time : </p>
     <p>Date: </p>
     <button type="button" class="btn btn-primary btn-lg btn-block">Start Ride</button>
-
-    
   </div>
 
  
