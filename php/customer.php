@@ -69,7 +69,8 @@ if (mysqli_query($conn, $sql)) {
 
 
 } else {
-    echo "Error insertin data: " . mysqli_error($conn);
+    $connErr = mysqli_error($conn);
+    echo "Error insertin data: " . $connErr;
 }
 
 mysqli_close($conn);
